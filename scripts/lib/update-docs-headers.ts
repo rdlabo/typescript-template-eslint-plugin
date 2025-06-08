@@ -4,12 +4,13 @@ import { pluginId } from './plugin-id';
 import type { RuleInfo } from './rules';
 import { rules } from './rules';
 
-type ListFormatOptions = {
+interface ListFormatOptions {
   type?: 'conjunction' | 'disjunction' | 'unit';
   style?: 'long' | 'short' | 'narrow';
   localeMatcher?: 'lookup' | 'best fit';
-};
+}
 
+// eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace Intl {
   class ListFormat {
     constructor(locale: string, options: ListFormatOptions);
@@ -30,7 +31,7 @@ const listFormatter = new Intl.ListFormat('en', { type: 'conjunction' });
 function renderHeader(rule: RuleInfo): string {
   const lines = [`# ${rule.id}`, `> ${rule.description}`];
 
-  if (rule.recommended) {
+  if (rule.recommended === 'recommended') {
     lines.push(
       `> - ⭐️ This rule is included in \`plugin:${pluginId}/recommended\` preset.`
     );

@@ -5,8 +5,7 @@ const rule: TSESLint.RuleModule<'disallowExample', []> = {
   meta: {
     docs: {
       description: 'An example rule.',
-      recommended: 'warn',
-      url: 'https://github.com/kotarella1110/template-typescript-eslint-plugin/blob/master/docs/rules/example-rule.md',
+      url: 'https://github.com/rdlabo/typescript-template-eslint-plugin/blob/master/docs/rules/example-rule.md',
     },
     messages: {
       disallowExample: "'example' identifier is forbidden.",
